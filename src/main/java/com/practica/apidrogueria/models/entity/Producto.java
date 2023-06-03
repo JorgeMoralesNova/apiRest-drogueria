@@ -16,7 +16,7 @@ public class Producto implements Serializable {
 
     private String nombre;
 
-    private Double precio;
+    private Integer precio;
 
     private String descripcion;
 
@@ -37,11 +37,11 @@ public class Producto implements Serializable {
         this.nombre = nombre;
     }
 
-    public Double getPrecio() {
+    public Integer getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Double precio) {
+    public void setPrecio(Integer precio) {
         this.precio = precio;
     }
 
