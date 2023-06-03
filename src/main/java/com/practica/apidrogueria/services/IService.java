@@ -11,10 +11,7 @@ public interface IService {
     public List<Producto> listarProductos();
     public List<Producto> findProductoByNombre(String nombre);
 
-    public List<Producto> findProductoByPrecio(Double precio);
-
-
-    public List<Producto> findProductoByfecha_vencimiento(Date fecha);
+    public List<Producto> findProductoByPrecio(Integer precio);
 
     public void saveProducto(Producto producto);
 

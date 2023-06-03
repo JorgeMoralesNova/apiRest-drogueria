@@ -30,7 +30,7 @@ public class IServiceImpl implements IService{
     }
 
     @Override
-    public List<Producto> findProductoByPrecio(Double precio) {
+    public List<Producto> findProductoByPrecio(Integer precio) {
         return productoDao.findProductoByPrecio(precio);
     }
 
@@ -39,10 +39,6 @@ public class IServiceImpl implements IService{
         return facturaDao.findFacturaByFechaCreacion(fecha);
     }
 
-    @Override
-    public List<Producto> findProductoByfecha_vencimiento(Date fecha) {
-        return productoDao.findProductoByFecha_vencimiento(fecha);
-    }
 
     @Override
     public void saveFactura(Factura factura) {
@@ -121,7 +117,6 @@ public class IServiceImpl implements IService{
         actual.setNombre(producto.getNombre());
         actual.setDescripcion(producto.getDescripcion());
         actual.setPrecio(producto.getPrecio());
-        actual.setTipo(producto.getTipo());
         actual.setFecha_vencimiento(producto.getFecha_vencimiento());
 
         productoDao.save(actual);

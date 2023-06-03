@@ -3,10 +3,7 @@ package com.practica.apidrogueria.controllers;
 import com.practica.apidrogueria.models.entity.Factura;
 import com.practica.apidrogueria.services.IService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +19,12 @@ public class FacturaRestController {
         return service.findFacturaById(id);
 
     }
+
+    @PostMapping("facturas/{id}")
+    public void deleteFactura(@RequestParam Long id){
+
+        service.deleteFactura(id);
+    }
+
 
 }

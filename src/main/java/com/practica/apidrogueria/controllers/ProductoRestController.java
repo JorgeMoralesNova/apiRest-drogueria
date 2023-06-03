@@ -31,7 +31,7 @@ public class ProductoRestController {
         return service.findProductoById(id);
     }
 
-    @GetMapping("/productos/{nombre}")
+    @GetMapping("/productos/nombre/{nombre}")
     public List<Producto> productoPorNombre(@PathVariable String nombre){
 
         return service.findProductoByNombre(nombre);
@@ -39,7 +39,7 @@ public class ProductoRestController {
 
 
     @GetMapping("/PorPrecio/{precio}")
-    public List<Producto> productosPorPrecio(@PathVariable Double precio){
+    public List<Producto> productosPorPrecio(@PathVariable Integer precio){
 
         return service.findProductoByPrecio(precio);
 
@@ -61,7 +61,7 @@ public class ProductoRestController {
         return producto;
     }
 
-    @PutMapping("/clientes/{id}")
+    @PutMapping("/productos/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public Producto actualizarProducto(@PathVariable Long id, @RequestBody Producto producto){
 
@@ -70,14 +70,14 @@ public class ProductoRestController {
         return producto;
     }
 
-    @DeleteMapping("/clientes/{id}")
+    @DeleteMapping("/productos/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminar(@PathVariable Long id){
 
         service.deleteProducto(id);
     }
 
-    @DeleteMapping("/clientes/{nombre}")
+    @DeleteMapping("/productos/nombre/{nombre}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminarPorNombre(@PathVariable String nombre){
 

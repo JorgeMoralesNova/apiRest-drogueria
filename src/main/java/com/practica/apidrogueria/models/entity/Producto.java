@@ -23,7 +23,6 @@ public class Producto implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fecha_vencimiento;
 
-    private Tipo tipo;
 
     public Long getId() {
         return id;
@@ -59,14 +58,6 @@ public class Producto implements Serializable {
 
     public void setFecha_vencimiento(Date fecha_vencimiento) {
         this.fecha_vencimiento = fecha_vencimiento;
-    }
-
-    public Tipo getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
     }
 
     private static final long serialVersionUID = 42L;
