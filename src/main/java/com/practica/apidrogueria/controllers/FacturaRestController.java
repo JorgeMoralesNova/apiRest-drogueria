@@ -20,7 +20,7 @@ public class FacturaRestController {
 
     }
 
-    @PostMapping("facturas/{id}")
+    @DeleteMapping("facturas/{id}")
     public void deleteFactura(@RequestParam Long id){
 
         service.deleteFactura(id);
