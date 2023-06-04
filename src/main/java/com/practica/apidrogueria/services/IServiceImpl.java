@@ -21,11 +21,18 @@ public class IServiceImpl implements IService{
 
     @Override
     public List<Producto> listarProductos() {
-        return productoDao.findAll();
+
+        List<Producto> productos=productoDao.findAll();
+
+        if (productos.isEmpty()){
+            return null;
+        }
+
+        return productos;
     }
 
     @Override
-    public List<Producto> findProductoByNombre(String nombre) {
+    public Producto findProductoByNombre(String nombre) {
         return productoDao.findProductoByNombreLikeIgnoreCase(nombre);
     }
 

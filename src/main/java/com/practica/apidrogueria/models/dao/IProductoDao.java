@@ -13,7 +13,7 @@ public interface IProductoDao extends JpaRepository<Producto,Long> {
 
 
     @Transactional(readOnly = true)
-    public List<Producto> findProductoByNombreLikeIgnoreCase(String nombre);
+    public Producto findProductoByNombreLikeIgnoreCase(String nombre);
 
     @Transactional(readOnly = true)
     public List<Producto> findProductoByPrecio(Integer precio);

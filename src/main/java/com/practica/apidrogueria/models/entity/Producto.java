@@ -1,6 +1,9 @@
 package com.practica.apidrogueria.models.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 
 import java.io.Serializable;
@@ -14,8 +17,12 @@ public class Producto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
+    @Size(min = 3)
+    @Column(unique = true)
     private String nombre;
 
+    @NotNull
     private Integer precio;
 
     private String descripcion;

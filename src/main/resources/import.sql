@@ -6,3 +6,7 @@ INSERT INTO productos (nombre, precio, descripcion, fecha_vencimiento) VALUES ('
 INSERT INTO productos (nombre, precio, descripcion, fecha_vencimiento) VALUES ('Producto6', 1400, 'Descripción del producto 6', '2023-06-07');
 INSERT INTO productos (nombre, precio, descripcion, fecha_vencimiento) VALUES ('Producto7', 2300, 'Descripción del producto 7', '2023-06-08');
 INSERT INTO productos (nombre, precio, descripcion, fecha_vencimiento) VALUES ('Producto8', 1400, 'Descripción del producto 8', '2023-06-09');
+
+
+
+

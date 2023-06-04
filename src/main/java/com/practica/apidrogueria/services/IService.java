@@ -9,7 +9,7 @@ import java.util.List;
 public interface IService {
 
     public List<Producto> listarProductos();
-    public List<Producto> findProductoByNombre(String nombre);
+    public Producto findProductoByNombre(String nombre);
 
     public List<Producto> findProductoByPrecio(Integer precio);
 
