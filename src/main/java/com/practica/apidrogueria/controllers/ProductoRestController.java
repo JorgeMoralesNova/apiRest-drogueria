@@ -217,7 +217,7 @@ public class ProductoRestController {
             service.deleteProductoByNombre(nombre);
         }catch (DataAccessException e){
 
-            mensajes.put("mensaje","hay algun error al intertar borrar el producto ".concat(nombre).concat(" del sistema"));
+            mensajes.put("mensaje","hay algun error al intentar borrar el producto ".concat(nombre).concat(" del sistema"));
 
             mensajes.put("error", e.getMessage().concat(": ".concat(e.getMostSpecificCause().getMessage())));
 

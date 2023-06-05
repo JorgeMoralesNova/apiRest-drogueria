@@ -20,7 +20,7 @@ public class FacturaRestController {
     @Autowired
     IService service;
     @GetMapping("/{id}")
-    public ResponseEntity<?> factura(@RequestParam Long id){
+    public ResponseEntity<?> factura(@PathVariable Long id){
 
         Factura factura=null;
         Map<String,Object> response= new HashMap<>();
@@ -44,7 +44,7 @@ public class FacturaRestController {
     }
 
     @DeleteMapping("facturas/{id}")
-    public ResponseEntity<?> deleteFactura(@RequestParam Long id){
+    public ResponseEntity<?> deleteFactura(@PathVariable Long id){
 
         Map<String,Object> map=new HashMap<>();
 
