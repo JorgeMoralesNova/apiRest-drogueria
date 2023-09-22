@@ -24,10 +24,6 @@ public class IServiceImpl implements IService{
 
         List<Producto> productos=productoDao.findAll();
 
-        if (productos.isEmpty()){
-            return null;
-        }
-
         return productos;
     }
 

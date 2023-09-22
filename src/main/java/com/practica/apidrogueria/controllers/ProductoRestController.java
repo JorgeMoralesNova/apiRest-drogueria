@@ -23,10 +23,17 @@ public class ProductoRestController {
     @GetMapping("/productos")
     public ResponseEntity<?> catalogo(){
 
-        List<Producto> productos= service.listarProductos();
+        List<Producto> productos;
+
+        try {
+            productos= service.listarProductos();
+        }catch (DataAccessException exception){
+            return ResponseEntity.internalServerError().body(Collections.singletonMap("error",exception.getMessage()));
+        }
+
 
         Map<String,Object> reponse= new HashMap<>();
-        if (productos==null){
+        if (productos==null  || productos.isEmpty()){
             reponse.put("mensaje", "actualmente no hay registros en la base de datos");
 
             return new ResponseEntity<Map<String,Object>>(reponse,HttpStatus.NOT_FOUND);
@@ -116,7 +123,13 @@ public class ProductoRestController {
     @GetMapping("/FechaVencimientoCorta")
     public ResponseEntity<?> fechaVencimientoCorta(){
 
-        List<Producto> productos=service.productos_a_vencer();
+        List<Producto> productos=new ArrayList<>();
+        try {
+            productos=service.productos_a_vencer();
+        }catch (DataAccessException accessException){
+            ResponseEntity.internalServerError().body(Collections.singletonMap("error", accessException.getMessage()));
+        }
+
         Map<String,Object> reponse=new HashMap<>();
         if (productos==null || productos.isEmpty()){
             reponse.put("mensaje", "no hay productos a vencer en menos de 1 año");

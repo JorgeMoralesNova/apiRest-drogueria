@@ -43,7 +43,7 @@ public class FacturaRestController {
 
     }
 
-    @DeleteMapping("facturas/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteFactura(@PathVariable Long id){
 
         Map<String,Object> map=new HashMap<>();

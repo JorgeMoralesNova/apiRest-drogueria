@@ -4,14 +4,25 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 import java.util.Date;
 
+
 @Entity
 @Table(name = "productos")
 public class Producto implements Serializable {
+
+    public Producto(){
+
+    }
+    public Producto(String nombre, Integer precio){
+        this.precio=precio;
+        this.nombre=nombre;
+    }
+
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,6 +77,9 @@ public class Producto implements Serializable {
     public void setFecha_vencimiento(Date fecha_vencimiento) {
         this.fecha_vencimiento = fecha_vencimiento;
     }
+
+
+
 
     private static final long serialVersionUID = 42L;
 
